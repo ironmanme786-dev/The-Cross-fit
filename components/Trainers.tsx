@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import Image from 'next/image';
 import { Instagram, MessageCircle, Star, ShieldCheck, Zap, HeartPulse, UserCheck, Salad, Activity } from 'lucide-react';
 
@@ -40,23 +40,30 @@ const trainers = [
     role: 'Functional Trainer',
     experience: '5 Years',
     highlight: 'Functional fitness & flexibility expert',
-    tags: ['Functional', 'Flexibility', 'Mobility'],
+    tags: ['Mobility', 'Functional', 'Flexibility'],
     rating: 5,
     image: 'https://drive.google.com/uc?export=view&id=1UW_RsMrYbseWLxcNJkIgr8xJcDLxauKf',
   }
 ];
 
 const features = [
-  { icon: ShieldCheck, text: "Certified Guidance" },
-  { icon: HeartPulse, text: "Friendly Support" },
-  { icon: Activity, text: "Workout Assistance" },
-  { icon: UserCheck, text: "Personalized Plans" },
-  { icon: Salad, text: "Nutrition Advice" },
-  { icon: Zap, text: "Injury Prevention" }
+  { icon: ShieldCheck, text: "Certified Guidance", color: "text-[#39FF14]", glow: "drop-shadow-[0_0_15px_rgba(57,255,20,0.8)] glow-[#39FF14]", hoverBg: "group-hover:bg-[#39FF14]/10 group-hover:border-[#39FF14]/40" },
+  { icon: HeartPulse, text: "Friendly Support", color: "text-[#FF073A]", glow: "drop-shadow-[0_0_15px_rgba(255,7,58,0.8)] glow-[#FF073A]", hoverBg: "group-hover:bg-[#FF073A]/10 group-hover:border-[#FF073A]/40" },
+  { icon: Activity, text: "Workout Assistance", color: "text-[#00FFFF]", glow: "drop-shadow-[0_0_15px_rgba(0,255,255,0.8)] glow-[#00FFFF]", hoverBg: "group-hover:bg-[#00FFFF]/10 group-hover:border-[#00FFFF]/40" },
+  { icon: UserCheck, text: "Personalized Plans", color: "text-[#FF00FF]", glow: "drop-shadow-[0_0_15px_rgba(255,0,255,0.8)] glow-[#FF00FF]", hoverBg: "group-hover:bg-[#FF00FF]/10 group-hover:border-[#FF00FF]/40" },
+  { icon: Salad, text: "Nutrition Advice", color: "text-[#FFFF00]", glow: "drop-shadow-[0_0_15px_rgba(255,255,0,0.8)] glow-[#FFFF00]", hoverBg: "group-hover:bg-[#FFFF00]/10 group-hover:border-[#FFFF00]/40" },
+  { icon: Zap, text: "Injury Prevention", color: "text-[#FF8C00]", glow: "drop-shadow-[0_0_15px_rgba(255,140,0,0.8)] glow-[#FF8C00]", hoverBg: "group-hover:bg-[#FF8C00]/10 group-hover:border-[#FF8C00]/40" }
 ];
 
 export function Trainers() {
   const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({});
+  const [selectedTag, setSelectedTag] = useState<string>('All');
+
+  const allTags = ['All', ...Array.from(new Set(trainers.flatMap(t => t.tags)))];
+
+  const filteredTrainers = selectedTag === 'All' 
+    ? trainers 
+    : trainers.filter(trainer => trainer.tags.includes(selectedTag));
 
   return (
     <section id="trainers" className="py-16 bg-[#050505] relative overflow-hidden">
@@ -70,7 +77,7 @@ export function Trainers() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-12 h-px bg-red-600/50" />
@@ -89,22 +96,40 @@ export function Trainers() {
               />
             </span> Trainers
           </h2>
-          <p className="text-gray-400 font-inter max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-gray-400 font-inter max-w-2xl mx-auto text-lg leading-relaxed mb-10">
             Train with Professionals. Transform with Confidence. Our certified masters are here to sculpt your ultimate version.
           </p>
+
+          <div className="flex flex-wrap justify-center gap-3">
+            {allTags.map((tag) => (
+              <button
+                key={tag}
+                onClick={() => setSelectedTag(tag)}
+                className={`px-5 py-2 rounded-full font-oswald text-xs font-medium uppercase tracking-[0.1em] transition-all duration-300 border ${
+                  selectedTag === tag 
+                    ? 'bg-red-600 text-white border-red-600 shadow-[0_4px_20px_rgba(220,38,38,0.4)]' 
+                    : 'bg-transparent text-gray-400 border-white/10 hover:border-white/30 hover:text-white'
+                }`}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-24 sm:max-w-md md:max-w-none mx-auto">
-          {trainers.map((trainer, index) => (
-            <motion.div
-              key={`trainer-${trainer.name.replace(/\s+/g, '-')}`}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className={`group relative h-[480px] md:h-[550px] bg-[#0A0A0A] rounded-[32px] overflow-hidden border border-white/5 transition-all duration-700 hover:border-red-600/30 hover:shadow-[0_30px_60px_rgba(0,0,0,0.8)] ${trainer.isPremium ? 'ring-2 ring-red-600/20' : ''}`}
-            >
-              {/* Top Trainer Ribbon */}
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-24 sm:max-w-md md:max-w-none mx-auto">
+          <AnimatePresence mode="popLayout">
+            {filteredTrainers.map((trainer, index) => (
+              <motion.div
+                layout
+                key={`trainer-${trainer.name.replace(/\s+/g, '-')}`}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className={`group relative h-[480px] md:h-[550px] bg-[#0A0A0A] rounded-[32px] overflow-hidden border border-white/5 transition-all duration-700 hover:border-red-600/30 hover:shadow-[0_30px_60px_rgba(0,0,0,0.8)] ${trainer.isPremium ? 'ring-2 ring-red-600/20' : ''}`}
+              >
+                {/* Top Trainer Ribbon */}
               {trainer.badge && (
                 <div className="absolute top-6 right-6 z-40">
                   <span className="bg-red-600 text-white text-[10px] font-oswald font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full shadow-[0_5px_15px_rgba(220,38,38,0.4)]">
@@ -189,7 +214,8 @@ export function Trainers() {
               <div className="absolute inset-0 bg-gradient-to-tr from-red-600/0 via-red-600/0 to-red-600/0 group-hover:from-red-600/5 group-hover:to-red-600/10 transition-all duration-700 pointer-events-none" />
             </motion.div>
           ))}
-        </div>
+          </AnimatePresence>
+        </motion.div>
 
         {/* Feature Highlights Strip */}
         <motion.div
@@ -207,10 +233,10 @@ export function Trainers() {
                 className="flex flex-col items-center gap-4 text-center group"
               >
                 <motion.div 
-                  whileHover={{ scale: 1.1 }}
-                  className="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/5 flex items-center justify-center group-hover:bg-red-600/10 group-hover:border-red-600/20 transition-all duration-500 shadow-inner"
+                  whileHover={{ scale: 1.15 }}
+                  className={`w-20 h-20 rounded-3xl bg-white/[0.03] border border-white/5 flex items-center justify-center transition-all duration-500 shadow-inner group-hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] ${feature.hoverBg}`}
                 >
-                  <feature.icon className="w-5 h-5 text-red-300 drop-shadow-[0_0_8px_rgba(252,165,165,0.6)]" />
+                  <feature.icon className={`w-10 h-10 ${feature.color} ${feature.glow}`} />
                 </motion.div>
                 <span className="text-[10px] sm:text-xs font-oswald font-black uppercase tracking-[0.2em] text-gray-400 group-hover:text-white transition-colors">
                   {feature.text}

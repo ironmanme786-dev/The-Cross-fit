@@ -282,7 +282,7 @@ export function Membership() {
           </motion.div>
           
           <h2 className="text-6xl sm:text-7xl md:text-8xl font-oswald font-black text-white uppercase mb-8 tracking-tighter leading-[0.9]">
-            Select Your <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#FF3131] to-[#D00000]">Domain</span>
+            Select Your <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#FF3131] to-[#D00000]">Goal!</span>
           </h2>
           
           <p className="text-gray-500 font-inter max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">

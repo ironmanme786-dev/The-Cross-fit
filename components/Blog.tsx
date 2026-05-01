@@ -12,7 +12,7 @@ export const blogPosts = [
     excerpt:
       "Fuel your workouts properly with these essential crossfit nutrition tips and macro guidelines.",
     image:
-      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=800&auto=format&fit=crop",
+      "https://drive.google.com/uc?export=view&id=1OXuZHtlqgFiohJZwlES8UQsAG0a_kMkk",
     date: "April 20, 2026",
     category: "Nutrition",
     content: [
@@ -97,7 +97,7 @@ export function Blog() {
         <Reveal width="100%">
           <div className="text-center mb-24">
             <h2 className="text-[44px] sm:text-6xl md:text-7xl lg:text-8xl font-oswald font-black uppercase tracking-tighter leading-none mb-8">
-              The <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-purple-600">Article Base</span>
+              The <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF073A] to-[#FF3131]">Article Base</span>
             </h2>
             <div className="h-1.5 w-32 bg-red-600 mx-auto rounded-full mb-10" />
             <p className="text-gray-500 font-inter max-w-2xl mx-auto text-lg md:text-xl font-light italic">

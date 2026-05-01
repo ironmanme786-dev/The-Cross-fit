@@ -21,7 +21,7 @@ export function About() {
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[40px] border border-white/10 shadow-[0_50px_100px_rgba(0,0,0,0.5)]">
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-60" />
               <Image
-                src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1470&auto=format&fit=crop"
+                src="https://drive.google.com/uc?export=view&id=1r-Vru31wgIDB0H_ba92gEBdYpXzPswQX"
                 alt="About The CrossFit Gym"
                 fill
                 referrerPolicy="no-referrer"

@@ -166,9 +166,11 @@ export function JoinForm() {
               href="https://wa.me/919234431773" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-green-500 hover:text-green-400 text-sm font-bold uppercase tracking-widest transition-colors"
+              className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#050505] border border-[#25D366]/50 text-[#25D366] text-sm font-black uppercase tracking-widest transition-all duration-500 hover:bg-[#25D366]/10 hover:border-[#25D366] hover:text-white shadow-[0_0_15px_rgba(37,211,102,0.2)] hover:shadow-[0_0_40px_rgba(37,211,102,0.8)] overflow-hidden"
             >
-              <MessageSquare size={16} /> Quick Contact via WhatsApp
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#25D366]/20 to-transparent -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+              <MessageSquare size={24} className="transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" /> 
+              <span className="relative z-10 drop-shadow-[0_0_8px_rgba(37,211,102,0.5)] group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">Quick Contact via WhatsApp</span>
             </a>
         </div>
       </div>

@@ -80,7 +80,7 @@ export function ContactList() {
           <div className="mb-24">
             <h3 className="text-red-500 font-oswald uppercase tracking-[0.4em] font-black text-sm mb-6">Connect</h3>
             <h2 className="text-[44px] sm:text-6xl md:text-7xl font-oswald font-black uppercase tracking-tighter leading-none mb-8">
-              Join The <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-purple-600">Bloodline</span>
+              Join The <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF073A] to-[#FF3131]">Bloodline</span>
             </h2>
             <div className="h-1.5 w-32 bg-red-600 mx-auto rounded-full mb-10" />
           </div>
