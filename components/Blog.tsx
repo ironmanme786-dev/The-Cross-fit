@@ -39,7 +39,7 @@ export const blogPosts = [
     excerpt:
       "Incorporate these fundamental compound movements into your routine to see massive strength gains.",
     image:
-      "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=800&auto=format&fit=crop",
+      "https://drive.google.com/uc?export=view&id=160GPDfC77tR8eH0_T_7hqqiT75xSaOSe",
     date: "April 15, 2026",
     category: "Fitness",
     content: [
@@ -66,7 +66,7 @@ export const blogPosts = [
     excerpt:
       "Get ready for exciting new additions to the gym floor including more Eleiko plates and rowers.",
     image:
-      "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=800&auto=format&fit=crop",
+      "https://drive.google.com/uc?export=view&id=1VUKklcED5JLAJWOohoU7HYyprhsOt60u",
     date: "April 10, 2026",
     category: "News",
     content: [

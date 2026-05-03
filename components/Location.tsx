@@ -34,8 +34,8 @@ export function Location() {
           >
             <div className="space-y-12">
               <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 group">
-                <div className="bg-red-600/10 p-5 rounded-2xl border border-red-600/20 shrink-0 w-fit group-hover:bg-red-600 group-hover:text-white transition-all duration-500">
-                  <MapPin className="text-red-500 group-hover:text-white" size={32} />
+                <div className="bg-cyan-400/10 p-5 rounded-2xl border border-cyan-400/20 shrink-0 w-fit group-hover:bg-cyan-400 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] group-hover:text-black transition-all duration-500">
+                  <MapPin className="text-cyan-400 group-hover:text-black" size={32} />
                 </div>
                 <div>
                   <h3 className="text-2xl font-oswald font-black text-white uppercase tracking-tight mb-3">Our Sanctuary</h3>
@@ -44,8 +44,8 @@ export function Location() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 group">
-                <div className="bg-red-600/10 p-5 rounded-2xl border border-red-600/20 shrink-0 w-fit group-hover:bg-red-600 group-hover:text-white transition-all duration-500">
-                  <Clock className="text-red-500 group-hover:text-white" size={32} />
+                <div className="bg-cyan-400/10 p-5 rounded-2xl border border-cyan-400/20 shrink-0 w-fit group-hover:bg-cyan-400 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] group-hover:text-black transition-all duration-500">
+                  <Clock className="text-cyan-400 group-hover:text-black" size={32} />
                 </div>
                 <div>
                   <h3 className="text-2xl font-oswald font-black text-white uppercase tracking-tight mb-3">Training Hours</h3>
@@ -53,14 +53,14 @@ export function Location() {
                     <p className="text-gray-400 font-inter text-lg">
                       <span className="text-white font-black italic mr-4">MON — SUN</span> 05:00 AM — 11:00 PM
                     </p>
-                    <p className="text-emerald-500 font-oswald font-black uppercase text-xs tracking-widest mt-4">OPEN ALL DAYS</p>
+                    <p className="text-cyan-400 font-oswald font-black uppercase text-xs tracking-widest mt-4 drop-shadow-[0_0_12px_rgba(34,211,238,1)]">OPEN ALL DAYS</p>
                   </div>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 group">
-                <div className="bg-red-600/10 p-5 rounded-2xl border border-red-600/20 shrink-0 w-fit group-hover:bg-red-600 group-hover:text-white transition-all duration-500">
-                  <Phone className="text-red-500 group-hover:text-white" size={32} />
+                <div className="bg-cyan-400/10 p-5 rounded-2xl border border-cyan-400/20 shrink-0 w-fit group-hover:bg-cyan-400 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] group-hover:text-black transition-all duration-500">
+                  <Phone className="text-cyan-400 group-hover:text-black" size={32} />
                 </div>
                 <div>
                   <h3 className="text-2xl font-oswald font-black text-white uppercase tracking-tight mb-3">Direct Contact</h3>
@@ -71,11 +71,11 @@ export function Location() {
             </div>
 
             <motion.a 
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 50px rgba(220,38,38,0.3)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 20px 50px rgba(34,211,238,0.6)" }}
               whileTap={{ scale: 0.95 }}
               href="https://maps.app.goo.gl/Gk4Gpn3pibmHDSKw7" 
               target="_blank"
-              className="mt-16 bg-white text-black px-10 py-6 rounded-2xl font-oswald font-black uppercase tracking-[0.3em] flex items-center justify-center gap-4 transition-all duration-500 group"
+              className="mt-16 bg-cyan-400 shadow-[0_0_25px_rgba(34,211,238,0.5)] text-black px-10 py-6 rounded-2xl font-oswald font-black uppercase tracking-[0.3em] flex items-center justify-center gap-4 transition-all duration-500 group"
             >
               Open GPS <Navigation size={22} className="group-hover:rotate-12 transition-transform" />
             </motion.a>
@@ -87,7 +87,7 @@ export function Location() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="rounded-[32px] overflow-hidden border border-white/5 shadow-2xl relative min-h-[500px]"
+            className="w-full rounded-[20px] overflow-hidden border-2 border-cyan-400/60 shadow-[0_0_40px_rgba(34,211,238,0.5)] relative h-[300px] sm:h-[400px] lg:h-[500px] lg:my-auto scale-95 hover:scale-100 hover:shadow-[0_0_60px_rgba(34,211,238,0.8)] transition-all duration-500"
           >
             {/* Proper Colorful Embed */}
             <iframe 

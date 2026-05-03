@@ -32,9 +32,9 @@ export function Equipments() {
         <Reveal width="100%">
           <div className="text-center mb-20">
             <h2 className="text-[44px] sm:text-5xl md:text-6xl lg:text-7xl font-oswald font-black text-white uppercase mb-6 tracking-tighter leading-none">
-              Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-red-500 to-purple-600">Equipments</span>
+              Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D400FF] to-[#B026FF] drop-shadow-[0_0_15px_rgba(212,0,255,0.8)]">Equipments</span>
             </h2>
-            <div className="h-1.5 w-32 bg-red-600 mx-auto mb-8 rounded-full" />
+            <div className="h-1.5 w-32 bg-[#D400FF] shadow-[0_0_15px_rgba(212,0,255,0.8)] mx-auto mb-8 rounded-full" />
             <p className="text-gray-400 font-inter max-w-2xl mx-auto text-lg sm:text-xl font-light italic">
               Train with world-class machines designed for <span className="text-white font-medium">uncompromising performance.</span>
             </p>
